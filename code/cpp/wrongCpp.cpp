@@ -5,13 +5,27 @@
 // VS2013 will print Oh
 //http://www.ituring.com.cn/article/194454
 
+class my:public std::string
+{
+   public: my(int l, char c):std::string(10000000, 'e')
+    {
+    std::cout << "iAmConstruct"<< std::endl;
+    }
+    
+
+};
+
 DWORD WINAPI ThreadProc(LPVOID lpParameter)
 {
-    static std::string x = std::string(10000000, 'e');
+    SetThreadAffinityMask(GetCurrentThread(), 0x00000001);// remove this you will see Oh
+    static my x = my(10000000, 'e');
+    printf("thredid: %d\n", GetCurrentThreadId());
     if (x.length() == 0) {
+        printf("thredid: %d\n", GetCurrentThreadId());
         std::cout << "Oh!" << std::endl;
     }
     else {
+        printf("thredid: %d\n", GetCurrentThreadId());
         std::cout << x.length() << std::endl;
     }
 
