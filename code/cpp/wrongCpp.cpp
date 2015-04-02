@@ -17,8 +17,9 @@ class my:public std::string
 
 DWORD WINAPI ThreadProc(LPVOID lpParameter)
 {
-    SetThreadAffinityMask(GetCurrentThread(), 0x00000001);// remove this you will see Oh
+   // SetThreadAffinityMask(GetCurrentThread(), 0x00000001);// remove this you will see Oh
     static my x = my(10000000, 'e');
+    Sleep(10);
     printf("thredid: %d\n", GetCurrentThreadId());
     if (x.length() == 0) {
         printf("thredid: %d\n", GetCurrentThreadId());
