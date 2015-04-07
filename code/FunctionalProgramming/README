@@ -9,3 +9,8 @@ To build and run, change into the directory of the project and:
 To run an interactive console (REPL) with the code for a project loaded:
 
     lein repl
+
+    
+    (clojure.main/load-script "sum/core.clj")
+     (in-ns 'sum.core)
+    
