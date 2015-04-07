@@ -13,6 +13,14 @@
   (if (empty? numbers)
     0
     (+ (first numbers) (recursive-sum (rest numbers)))))
+    
+(defn rcursive-sum [numbers]
+  (loop [result 0, x numbers]
+    (if (empty? x)
+      result
+      (recur (+ result (first x)) (rest x)))      
+      )
+      )
 
 (defn reduce-sum [numbers]
   (reduce #(+ %1 %2) 0 numbers))
@@ -25,3 +33,8 @@
 
 (defn parallel-sum [numbers]
   (r/fold + numbers))
+
+  (defn sum-down-from [sum x]
+  (if (pos? x)
+    (recur (+ sum x) (dec x))
+    sum))
