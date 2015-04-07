@@ -6,3 +6,12 @@ To build and run, change into the directory of the project and:
 
     mvn compile
     mvn exec:java
+--------------
+Simon:
+go to the code to javac *.java
+to run it, you need first read the code, example:
+package com.paulbutcher;
+
+Then you need cd ..\..\
+
+java com.paulbutcher.Counting
