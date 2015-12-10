@@ -6,6 +6,11 @@ To build and run, change into the directory of the project and:
 
     mvn compile
     mvn exec:java
+    -----------------
+    mvn help:system
+    mvn compile
+mvn package
+java -jar target\xxx.jar
 --------------
 Simon:
 go to the code to javac *.java
